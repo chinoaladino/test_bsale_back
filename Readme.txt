@@ -1,0 +1,2 @@
+Para iniciar el servidor debe instalar las dependencias de NodeJs, para hacerlos abra la terminal y escriba los siguientes comandos: 'NPM i' o 'NPM install',
+luego para inicializar el servidor ejecute el comando 'npm run dev'.
