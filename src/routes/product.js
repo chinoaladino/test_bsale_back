@@ -39,14 +39,22 @@ router.get('/product/category/:id', (req, res) => {
 
 router.get('/product/byName/:name', (req, res) => {
     const { name } = req.params;
-    mysqlConnection.query(`SELECT name,url_image,price,discount,category FROM product WHERE name LIKE ?`, '%' + name + '%', (err, rows) => {
-        if (!err) {
-            res.json(rows);  
-        }
-        else {
-            console.log(err)
-        }
-    })
+    if (name != '') {
+        mysqlConnection.query(`SELECT name,url_image,price,discount,category FROM product WHERE name LIKE ?`, '%' + name + '%', (err, rows) => {
+            if (!err) {
+                if (rows != 0) {
+                    res.json(rows);  
+                } else {
+                    res.json('no hay registros');
+                }
+            }
+            else {
+                console.log(err)
+            }
+        })
+    } else {
+        res.json('parametro vacio');
+    }
 })
 
 module.exports = router;
