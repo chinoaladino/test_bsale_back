@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+const cors = require('cors');
 const productRoutes = require('./routes/product');
 const categoryRoutes = require('./routes/category');
 
@@ -9,6 +11,8 @@ app.set('port',process.env.PORT || 3000);
 
 
 //Middlewares
+app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json());
 
 //Routes

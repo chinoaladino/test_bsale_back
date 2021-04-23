@@ -37,8 +37,16 @@ router.get('/product/category/:id', (req, res) => {
     })
 })
 
-
-
-
+router.get('/product/byName/:name', (req, res) => {
+    const { name } = req.params;
+    mysqlConnection.query(`SELECT name,url_image,price,discount,category FROM product WHERE name LIKE ?`, '%' + name + '%', (err, rows) => {
+        if (!err) {
+            res.json(rows);  
+        }
+        else {
+            console.log(err)
+        }
+    })
+})
 
 module.exports = router;
