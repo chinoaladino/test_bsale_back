@@ -35,7 +35,7 @@ router.get('/product/category/:id', (req, res) => {
                 res.json(rows);
             } else {
                 res.json({
-                    error: 'no existen registros con esta categoria'
+                    error: 'No existen registros con esta categoria'
                 })
             }
         }
@@ -56,7 +56,7 @@ router.get('/product/byName/:name', (req, res) => {
                     res.json(rows);  
                 } else {
                     res.json({
-                        error: 'no hay registros con este nombre'
+                        error: 'No hay productos'
                     });
                 }
             }
