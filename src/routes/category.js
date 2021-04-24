@@ -8,7 +8,9 @@ router.get('/', (req,res) => {
             res.json(rows);
         }
         else {
-            console.log(err)
+            res.json({
+                error: 'Error de conexion'
+            })
         }
     })
 })
@@ -20,7 +22,9 @@ router.get('/category/:id', (req, res) => {
             res.json(rows);
         }
         else {
-            console.log(err)
+            res.json({
+                error: 'Error de conexion'
+            })
         }
     })
 })
