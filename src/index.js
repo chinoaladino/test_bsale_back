@@ -7,7 +7,7 @@ const categoryRoutes = require('./routes/category');
 
 
 //Settings
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 8080);
 
 
 //Middlewares
