@@ -5,9 +5,10 @@ const cors = require('cors');
 const productRoutes = require('./routes/product');
 const categoryRoutes = require('./routes/category');
 
+const port = process.env.PORT || 3000;
 
 //Settings
-app.set('port',process.env.PORT || 3000);
+app.set('port',port);
 
 
 //Middlewares
@@ -20,6 +21,6 @@ app.use(productRoutes);
 app.use(categoryRoutes);
 
 //Inicializar servidor
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server on port: ',app.get('port'));
 })
